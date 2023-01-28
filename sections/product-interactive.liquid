@@ -47,9 +47,11 @@
 <div class="product-interactive">
   <div class="product-container">
     <img src="https://cdn.shopify.com/s/files/1/0712/1508/7899/files/City_2022_15112022_4_1_1.png?v=1674865981" alt="">
+    {% assign component_bar = all_products["The-Bar"] %}
     <svg
       class="component component_bar"
-      data-id="44374343516443"
+      data-id="{{component_bar.first_available_variant
+                                                                                                                                                                                                                                                                                                                                                                                                                .id}}"
       width="70"
       height="251"
       viewBox="0 0 70 251"
@@ -143,8 +145,6 @@
       </defs>
     </svg>
 
-
-
   </div>
 
 </div>
@@ -167,29 +167,39 @@
     let formData = {
       'items': [
         {
-          'id': id,
-          'quantity': 1
+          form_type: "product",
+          id: id,
+          quantity: 1
         }
       ]
     };
+
     fetch(window.Shopify.routes.root + 'cart/add.js', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(formData)
-    }).then(response => {
-      var formElement = document.querySelector('form[action*="/cart/add"]');
-      var quantityElement = formElement.querySelector('[name="quantity"]');
-      formElement.dispatchEvent(new CustomEvent('product:added', {
-        bubbles: true,
-        detail: {
-          quantity: quantityElement
-            ? parseInt(quantityElement.value)
-            : 1
+    }).then(async (response) => {
+
+      const reader = await response.json()
+      const cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+
+      setTimeout(() => {
+        reader.items[0].sections = {}
+        for (const key of cart.getSectionsToRender()) {
+          const sectionEl = key.selector
+            ? document.querySelector(key.selector)
+            : document.querySelector(`#${
+              key.id
+            }`)
+          reader.items[0].sections[key.id] = sectionEl
+            ? sectionEl.outerHTML
+            : null
         }
-      }));
-      return response.json();
+
+        cart.renderContents(reader.items[0])
+      });
     }).catch((error) => {
       console.error('Error:', error);
     });

@@ -1,3 +1,4 @@
 {
-  "editor.defaultFormatter": "Shopify.theme-check-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "shopifyLiquid.shopifyCLIPath": "/root/.nvm/versions/node/v19.1.0/bin/shopify"
 }
