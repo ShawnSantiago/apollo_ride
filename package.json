@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.0.6",
+    "prettier": "^2.8.3"
+  },
+  "name": "apollo-test",
+  "version": "1.0.0",
+  "description": "Web dev test",
+  "main": "index.js",
+  "dependencies": {
+    "html-styles": "^1.0.0",
+    "isarray": "^1.0.0",
+    "isobject": "^2.1.0",
+    "line-column": "^1.0.2",
+    "ohm-js": "^16.6.0"
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShawnSantiago/apollo_ride.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShawnSantiago/apollo_ride/issues"
+  },
+  "homepage": "https://github.com/ShawnSantiago/apollo_ride#readme"
+}

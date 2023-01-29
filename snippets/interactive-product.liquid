@@ -1,0 +1,214 @@
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
+    px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
+    px;
+  }
+  .product-interactive {
+    display: flex !important;
+    position: relative !important;
+  }
+  .product-interactive .product-container {
+    display: flex;
+    margin: auto;
+    position: relative;
+  }
+  .product-interactive .container img {}
+  .product-interactive .component_bar {
+    position: absolute;
+    top: 184px;
+    left: 361.66px;
+    z-index: 10;
+    opacity: 0;
+  }
+  .product-interactive .component_front_bracket {
+    position: absolute;
+    top: 461px;
+    left: 351px;
+    z-index: 10;
+    opacity: 0;
+  }
+  .product-interactive .component_rear_bracket {
+    position: absolute;
+    top: 521px;
+    left: 696px;
+    z-index: 10;
+    opacity: 0;
+  }
+
+  #shopify-section-template--17681705566491__newsletter {
+    margin-top: 0;
+  }
+</style>
+
+<div class="product-interactive">
+  <div class="product-container">
+    <img src="https://cdn.shopify.com/s/files/1/0712/1508/7899/files/City_2022_15112022_4_1_1.png?v=1674865981" alt="">
+    {% assign component_bar = all_products["The-Bar"] %}
+    <svg
+      class="component component_bar"
+      data-id="{{component_bar.first_available_variant.id}}"
+      width="70"
+      height="251"
+      viewBox="0 0 70 251"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_f_1_38)">
+        <path
+          d="M36.2655 212.833L67.7122 7.9379C67.8774 6.86144 67.151 5.85067 66.078 5.66407L47.0421 2.35348C45.9299 2.16006 44.8782 2.92485 44.7193 4.04249L17.6035 194.839C17.5426 195.268 17.3207 195.677 16.889 195.713C16.5605 195.741 16.1047 195.698 15.5096 195.5C14.3529 195.114 12.1742 191.911 11.1229 190.187C11.0469 190.063 10.9858 189.931 10.9431 189.791C10.7676 189.217 10.5096 188.204 10.5096 187.5C10.5096 186.5 10.0096 185 9.50961 185C9.10961 185 8.67628 186.333 8.50961 187L6.63975 199.622C6.55689 200.181 6.23249 200.672 5.8236 201.062C5.32818 201.535 4.77027 202.218 4.50961 203C4.272 203.713 4.49314 204.226 4.81666 204.56C5.18579 204.941 5.64764 205.274 5.70389 205.801C5.76038 206.331 5.74048 207.077 5.50963 208C5.00965 210 5.50963 212.5 5.50963 215.5C5.50963 218.5 1.50963 227 3.00963 231C3.83803 233.209 6.3026 234.116 8.46235 234.41C9.74905 234.586 10.8573 235.749 10.8902 237.047C10.924 238.383 11.0859 240.093 11.5096 242C12.5096 246.5 24.5096 250 30.0096 248.5C34.0742 247.391 36.1761 244.775 36.8671 243.332C36.9706 243.116 37.0096 242.877 37.0096 242.637V240.5C37.0096 239.833 37.4096 238.5 39.0096 238.5C40.0588 238.5 40.9296 237.481 41.3547 236.779C41.4643 236.598 41.525 236.396 41.5558 236.187C42.2359 231.57 43.5096 222.346 43.5096 220C43.5096 218.039 40.1724 216.168 37.5876 215.094C36.6877 214.72 36.1177 213.796 36.2655 212.833Z"
+          fill="#F2591E"
+          fill-opacity="0.36" />
+      </g>
+      <defs>
+        <filter
+          id="filter0_f_1_38"
+          x="0.673065"
+          y="0.323547"
+          width="69.0625"
+          height="250.529"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape" />
+          <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_1_38" />
+        </filter>
+      </defs>
+    </svg>
+    {% assign component_front_bracket = all_products["Front-Bracket"] %}
+    <svg
+      class="component component_front_bracket"
+      data-id="{{component_front_bracket.first_available_variant.id}}"
+      xmlns="http://www.w3.org/2000/svg"
+      width="93"
+      height="111"
+      fill="none">
+      <g filter="url(#a)">
+        <path
+          fill="#F2591E"
+          fill-opacity=".36"
+          d="M7.046 6.098c1.514-3.785 6.131-4.287 8.6-4.048.266.026.524.111.729.282 1.69 1.417 1.828 5.038 1.671 6.766-.333 2 1.2 6.1 10 6.5 11 .5 19.5 5.5 30.5 9.5 8.473 3.08 23.497 13.825 30.702 19.38.505.39.787.996.764 1.633-.197 5.56-.714 14.987-1.466 14.987-.8 0-1 .666-1 1 .167 2.5.1 7.7-1.5 8.5a3.607 3.607 0 0 0-1.93 2.436c-.082.363-.17.727-.367 1.043-4.432 7.157-13.03 20.956-14.203 22.52-1.088 1.452-2.807 2.464-3.74 2.889a1.713 1.713 0 0 1-.542.14l-44.939 4.444c-.185.018-.37.01-.554-.018-1.938-.299-5.7-.36-7.225 1.546-2 2.5-3 4.5-7 2-2.537-1.586-2.518-3.486-1.986-4.703.238-.544.816-1.022.69-1.602-.115-.534-.455-1.385-1.204-2.695-1.483-2.597-.216-4.82.774-5.794.145-.143.322-.246.51-.323l44.438-18.269c.184-.076.357-.179.51-.306l8.04-6.62c.151-.125.284-.27.388-.437.377-.606.995-1.716 1.34-2.751.379-1.136 1.982-1.466 2.859-1.498.094-.003.188-.008.281-.025 1.173-.203 2.898-.94 1.36-2.477-1.571-1.572-5.2-7.13-6.908-9.855a1.959 1.959 0 0 0-.208-.274c-1.543-1.709-4.604-4.981-5.384-5.371-.45-.226-.605-.885-.624-1.567-.024-.86-.38-1.721-1.138-2.129a105.02 105.02 0 0 0-6.738-3.304c-4.5-2-21.5-8.5-26.5-10-3.891-1.168-7.151-5.584-8.4-7.818a1.755 1.755 0 0 1-.157-.38c-.832-2.936-2.006-9.393-.443-13.302Z" />
+      </g>
+      <defs>
+        <filter
+          id="a"
+          width="91.646"
+          height="110.747"
+          x=".367"
+          y="0"
+          color-interpolation-filters="sRGB"
+          filterUnits="userSpaceOnUse">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape" />
+          <feGaussianBlur result="effect1_foregroundBlur_1_45" stdDeviation="1" />
+        </filter>
+      </defs>
+    </svg>
+    {% assign component_rear_bracket = all_products["Rear-Bracket"] %}
+
+    <svg
+      class="component component_rear_bracket"
+      data-id="{{component_rear_bracket.first_available_variant.id}}"
+      xmlns="http://www.w3.org/2000/svg"
+      width="96"
+      height="52"
+      fill="none">
+      <g filter="url(#a)">
+        <path
+          fill="#F2591E"
+          fill-opacity=".36"
+          d="M30.601 11V4.784c0-1.607-1.798-2.558-3.125-1.652C19.583 8.52 7.547 16.752 5.101 18.5c-2.034 1.453-2.784 2.466-2.978 3.04-.1.294-.033.624.03.928.152.722.663 1.71 1.948 2.032 1.486.371 2.799 1.92 3.38 2.807.082.127.174.248.28.357L21.6 42c2.167 2.167 7 6.7 9 7.5 2.5 1 21-1 24.5-1 2.8 0 15.5-1.667 21.5-2.5 2.167-.333 6.7-.7 7.5.5 1 1.5 1 1.5 4.5 2 2.723.389 3.46-2.657 3.499-4.358.002-.095.008-.188.022-.282.18-1.21.595-3.475.98-3.86.5-.5.5-5.5.5-6.5 0-.8-1.667-1.333-2.5-1.5l-48.627-9.924a1.998 1.998 0 0 1-.693-.284l-10.273-6.7a2 2 0 0 1-.908-1.675V11Z" />
+      </g>
+      <defs>
+        <filter
+          id="a"
+          width="95.529"
+          height="50.999"
+          x=".072"
+          y=".781"
+          color-interpolation-filters="sRGB"
+          filterUnits="userSpaceOnUse">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape" />
+          <feGaussianBlur result="effect1_foregroundBlur_1_52" stdDeviation="1" />
+        </filter>
+      </defs>
+    </svg>
+
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script>
+  function hover(element) {
+    const hover = gsap.to(element, {
+      opacity: 1,
+      duration: .25,
+      paused: true,
+      ease: "ease-in-out"
+    });
+
+    element.addEventListener("mouseenter", () => hover.play());
+    element.addEventListener("mouseleave", () => hover.reverse())
+  }
+
+  function addtocart(id) {
+    const cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+    let formData = {
+      'items': [
+        {
+          form_type: "product",
+          id: id,
+          quantity: 1
+        }
+      ],
+      sections: cart.getSectionsToRender().map((section) => section.id)
+    };
+
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    }).then(async (response) => {
+
+      const reader = await response.json()
+
+      cart.renderContents({
+        ... reader.items[0],
+        sections: reader.sections
+      });
+    }).catch((error) => {
+      console.error('Error:', error);
+    }). finally(() => {
+      if (cart && cart.classList.contains("is-empty")) 
+        cart.classList.remove("is-empty");
+      
+
+    });
+
+  }
+  const component_bar = document.querySelector(".component_bar");
+  hover(component_bar);
+
+  const component_front_bracket = document.querySelector(".component_front_bracket");
+  hover(component_front_bracket);
+
+  const component_rear_bracket = document.querySelector(".component_rear_bracket");
+  hover(component_rear_bracket);
+
+  const components = document.querySelectorAll(".component");
+  components.forEach((component) => component.addEventListener("click", (e) => {addtocart(e.target.closest('svg').getAttribute('data-id'))}, false))
+</script>
