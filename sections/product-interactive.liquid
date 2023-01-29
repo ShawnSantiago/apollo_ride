@@ -195,23 +195,25 @@
       if (cart && cart.classList.contains("is-empty")) 
         cart.classList.remove("is-empty");
       
-
-
-
     });
 
   }
+
   const component_bar = document.querySelector(".component_bar");
   hover(component_bar);
-
+  console.log(component_bar)
   const component_front_bracket = document.querySelector(".component_front_bracket");
   hover(component_front_bracket);
 
   const component_rear_bracket = document.querySelector(".component_rear_bracket");
   hover(component_rear_bracket);
 
-  const components = document.querySelector(".component");
-  components.addEventListener("click", (e) => addtocart(e.target.closest('svg').getAttribute('data-id')), false);
+  const components = document.querySelectorAll(".component");
+  console.log(components)
+  components.forEach((component) => component.addEventListener("click", (e) => {
+    console.log(e)
+      addtocart(e.target.closest('svg').getAttribute('data-id')}
+  ), false))
 </script>
 {% schema %}
   {

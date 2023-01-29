@@ -197,8 +197,6 @@
         cart.classList.remove("is-empty");
       
 
-
-
     });
 
   }
@@ -211,6 +209,6 @@
   const component_rear_bracket = document.querySelector(".component_rear_bracket");
   hover(component_rear_bracket);
 
-  const components = document.querySelector(".component");
-  components.addEventListener("click", (e) => addtocart(e.target.closest('svg').getAttribute('data-id')), false);
+  const components = document.querySelectorAll(".component");
+  components.forEach((component) => component.addEventListener("click", (e) => {addtocart(e.target.closest('svg').getAttribute('data-id'))}, false))
 </script>
