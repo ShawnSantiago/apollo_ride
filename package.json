@@ -1,7 +1,9 @@
 {
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.0.6",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "name": "apollo-test",
   "version": "1.0.0",
@@ -14,8 +16,7 @@
     "line-column": "^1.0.2",
     "ohm-js": "^16.6.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShawnSantiago/apollo_ride.git"

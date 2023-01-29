@@ -5,41 +5,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
     px;
   }
-  .product-interactive {
-    display: flex !important;
-    position: relative !important;
-  }
-  .product-interactive .product-container {
-    display: flex;
-    margin: auto;
-    position: relative;
-  }
-  .product-interactive .container img {}
-  .product-interactive .component_bar {
-    position: absolute;
-    top: 184px;
-    left: 361.66px;
-    z-index: 10;
-    opacity: 0;
-  }
-  .product-interactive .component_front_bracket {
-    position: absolute;
-    top: 461px;
-    left: 351px;
-    z-index: 10;
-    opacity: 0;
-  }
-  .product-interactive .component_rear_bracket {
-    position: absolute;
-    top: 521px;
-    left: 696px;
-    z-index: 10;
-    opacity: 0;
-  }
-
-  #shopify-section-template--17681705566491__newsletter {
-    margin-top: 0;
-  }
+  
 </style>
 
 <div class="product-interactive">
@@ -49,6 +15,7 @@
     <svg
       class="component component_bar"
       data-id="{{component_bar.first_available_variant.id}}"
+      data-name="{{component_bar.title}}"
       width="70"
       height="251"
       viewBox="0 0 70 251"
@@ -83,6 +50,7 @@
     <svg
       class="component component_front_bracket"
       data-id="{{component_front_bracket.first_available_variant.id}}"
+      data-name="{{component_front_bracket.title}}"
       xmlns="http://www.w3.org/2000/svg"
       width="93"
       height="111"
@@ -116,6 +84,7 @@
     <svg
       class="component component_rear_bracket"
       data-id="{{component_rear_bracket.first_available_variant.id}}"
+      data-name="{{component_rear_bracket.title}}"
       xmlns="http://www.w3.org/2000/svg"
       width="96"
       height="52"
@@ -144,71 +113,14 @@
         </filter>
       </defs>
     </svg>
-
+    <div class="parts-list is-empty">
+      <h2>Parts List</h2>
+      <ul></ul>
+      <button class="checkout">ADD TO CART</button>
+    </div>
   </div>
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-<script>
-  function hover(element) {
-    const hover = gsap.to(element, {
-      opacity: 1,
-      duration: .25,
-      paused: true,
-      ease: "ease-in-out"
-    });
 
-    element.addEventListener("mouseenter", () => hover.play());
-    element.addEventListener("mouseleave", () => hover.reverse())
-  }
-
-  function addtocart(id) {
-    const cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
-    let formData = {
-      'items': [
-        {
-          form_type: "product",
-          id: id,
-          quantity: 1
-        }
-      ],
-      sections: cart.getSectionsToRender().map((section) => section.id)
-    };
-
-    fetch(window.Shopify.routes.root + 'cart/add.js', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    }).then(async (response) => {
-
-      const reader = await response.json()
-
-      cart.renderContents({
-        ... reader.items[0],
-        sections: reader.sections
-      });
-    }).catch((error) => {
-      console.error('Error:', error);
-    }). finally(() => {
-      if (cart && cart.classList.contains("is-empty")) 
-        cart.classList.remove("is-empty");
-      
-
-    });
-
-  }
-  const component_bar = document.querySelector(".component_bar");
-  hover(component_bar);
-
-  const component_front_bracket = document.querySelector(".component_front_bracket");
-  hover(component_front_bracket);
-
-  const component_rear_bracket = document.querySelector(".component_rear_bracket");
-  hover(component_rear_bracket);
-
-  const components = document.querySelectorAll(".component");
-  components.forEach((component) => component.addEventListener("click", (e) => {addtocart(e.target.closest('svg').getAttribute('data-id'))}, false))
-</script>
+<script src="{{"main.js" | asset_url}}"></script>
