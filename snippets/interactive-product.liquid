@@ -1,4 +1,4 @@
-{%- style -%}
+<style>
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
     px;
@@ -6,7 +6,8 @@
     px;
   }
   .product-interactive {
-    display: flex;
+    display: flex !important;
+    position: relative !important;
   }
   .product-interactive .product-container {
     display: flex;
@@ -18,28 +19,28 @@
     position: absolute;
     top: 184px;
     left: 361.66px;
-    z-index: 1;
+    z-index: 10;
     opacity: 0;
   }
   .product-interactive .component_front_bracket {
     position: absolute;
     top: 461px;
     left: 351px;
-    z-index: 1;
+    z-index: 10;
     opacity: 0;
   }
   .product-interactive .component_rear_bracket {
     position: absolute;
     top: 521px;
     left: 696px;
-    z-index: 1;
+    z-index: 10;
     opacity: 0;
   }
 
   #shopify-section-template--17681705566491__newsletter {
     margin-top: 0;
   }
-{%- endstyle -%}
+</style>
 
 <div class="product-interactive">
   <div class="product-container">
@@ -213,15 +214,3 @@
   const components = document.querySelector(".component");
   components.addEventListener("click", (e) => addtocart(e.target.closest('svg').getAttribute('data-id')), false);
 </script>
-{% schema %}
-  {
-    "name": "Product Interactive",
-    "tag": "section",
-    "class": "section",
-    "presets": [
-      {
-        "name": "Product Interactive"
-      }
-    ]
-  }
-{% endschema %}

@@ -50,7 +50,7 @@ class CartDrawer extends HTMLElement {
           this.querySelector(".drawer__close");
         trapFocus(containerToTrapFocusOn, focusElement);
       },
-      { once: true }
+      {once: true}
     );
 
     document.body.classList.add("overflow-hidden");
@@ -107,7 +107,6 @@ class CartDrawer extends HTMLElement {
   }
 
   getSectionInnerHTML(html, selector = ".shopify-section") {
-    console.log(html);
     return new DOMParser()
       .parseFromString(html, "text/html")
       .querySelector(selector).innerHTML;

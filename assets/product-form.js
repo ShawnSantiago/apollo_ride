@@ -46,7 +46,6 @@ if (!customElements.get("product-form")) {
         fetch(`${routes.cart_add_url}`, config)
           .then((response) => response.json())
           .then((response) => {
-            console.log("response", response);
             if (response.status) {
               this.handleErrorMessage(response.description);
 
@@ -73,7 +72,7 @@ if (!customElements.get("product-form")) {
                     this.cart.renderContents(response);
                   });
                 },
-                { once: true }
+                {once: true}
               );
               quickAddModal.hide(true);
             } else {
