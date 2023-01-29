@@ -115,6 +115,7 @@
             transform: translateX(-50%);
             width: auto !important;
             height: auto !important;
+            min-width: 600px;
           }
           #Slide-{{ section.id }}-{{ forloop.index }}.banner__media::after {
             opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }}
