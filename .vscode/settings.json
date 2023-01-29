@@ -2,5 +2,5 @@
   "editor.defaultFormatter": null,
   "shopifyLiquid.shopifyCLIPath": "/root/.nvm/versions/node/v19.1.0/bin/shopify",
   "prettier.enable": true,
-  "liquid.format.enable": true
+  "editor.comments.ignoreEmptyLines": false,
 }
