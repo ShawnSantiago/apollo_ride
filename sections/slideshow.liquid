@@ -110,11 +110,10 @@
       {% if block.type == "slide" %}
         <style>
           #Slide-{{ section.id }}-{{ forloop.index }} .banner__media img {
-            top: 5% !important;
+            top: 0% !important;
             left: 50% !important;
             transform: translateX(-50%);
             width: auto !important;
-            height: auto !important;
             min-width: 600px;
           }
           #Slide-{{ section.id }}-{{ forloop.index }}.banner__media::after {
@@ -162,7 +161,7 @@
         </div>
       {% else %}
         <div
-          class="slideshow__slide grid__item grid--1-col slider__slide"
+          class="slideshow__slide grid__item grid--1-col slider__slide slide__interactive"
           id="Slide-{{ section.id }}-{{ forloop.index }}"
           {{ block.shopify_attributes }}
           role="group"
